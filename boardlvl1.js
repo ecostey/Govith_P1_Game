@@ -10,16 +10,16 @@ function makeBoard() {
     const board1 = document.getElementById('board1');
     for (let i = 0; i < arrTiles.length; i += 1) {
         for (let j = 0; j < arrTiles.length; j += 1) {
-            const tile = document.createElement('div');
-            tile.className = 'tile';
-            const X = addTileClass(tile, arrTiles[i][j]);
-            tile.className = X;
-            board1.appendChild(tile);
+            const tileDivs = document.createElement('div');
+            tileDivs.className = 'tile';
+            const token = addTokenFunc (tileDivs, arrTiles[i][j]);
+            tileDivs.classList.add (token);
+            board1.appendChild(tileDivs);
          }
     }
 }
 makeBoard ();
 
-function addTileClass (element , cName){
-    return(element.className = cName);
+function addTokenFunc (element , arrInt){
+    return(element.className.add = arrInt);
 }
