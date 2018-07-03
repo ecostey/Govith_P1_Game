@@ -1,0 +1,32 @@
+.board1{
+    background: rgb(219, 219, 219);
+    border: black solid 1px;
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    padding: 0px;
+}
+
+.tile {
+    width: 80px;
+    height: 80px;
+    border: black solid .25px;
+    padding: 0px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#start{
+background-color: green;
+}
+
+#end{
+    background-color: green;
+}
+
+#monster{
+    background-color: red;
+}
+
+#treasure{
+    background-color: goldenrod;
+}
