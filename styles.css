@@ -1,15 +1,34 @@
+#board1wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #board1{
-    background: rgb(219, 219, 219);
-    border: green solid 1px;
+    background: grey;
     display: inline-grid;
     grid-template-columns: auto auto auto auto auto auto;
     padding: 0px;
+    margin: auto;
+    position: relative;   
+}
+
+img{
+    height: 80px;
+    width: 80px;
+}
+
+.player{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin: auto;
 }
 
 .tile {
     width: 80px;
     height: 80px;
-    border: orange solid .25px;
+    border: grey dotted .15px;
     padding: 0px;
     margin: 0px;
     font-size: 30px;
@@ -17,19 +36,21 @@
 }
 
 .O{
-    background-color: rgb(210, 180, 140);  
+    background-color: black;  
 }
 
 .start{
-background-color: green;
+    background-color: tan;
+    border-bottom: 150px green;
 }
 
-.end{
-    background-color: green;
+.exit{
+    background-color: black;
+    border-top: 20px green;
 }
 
-.monster{
-    background-color: red;
+.goblin{
+    background-color: rgb(48, 4, 4);
 }
 
 .treasure{

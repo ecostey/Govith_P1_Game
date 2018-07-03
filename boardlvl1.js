@@ -12,14 +12,10 @@ function makeBoard() {
         for (let j = 0; j < arrTiles.length; j += 1) {
             const tileDivs = document.createElement('div');
             tileDivs.className = 'tile';
-            const token = addTokenFunc (tileDivs, arrTiles[i][j]);
-            tileDivs.classList.add (token);
+            tileDivs.classList.add(arrTiles[i][j]);
             board1.appendChild(tileDivs);
-         }
+        }
     }
 }
-makeBoard ();
+makeBoard();
 
-function addTokenFunc (element , arrInt){
-    return(element.className.add = arrInt);
-}
