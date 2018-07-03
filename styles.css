@@ -1,6 +1,6 @@
-.board1{
+#board1{
     background: rgb(219, 219, 219);
-    border: black solid 1px;
+    border: green solid 1px;
     display: inline-grid;
     grid-template-columns: auto auto auto auto auto auto;
     padding: 0px;
@@ -9,24 +9,25 @@
 .tile {
     width: 80px;
     height: 80px;
-    border: black solid .25px;
+    border: orange solid .25px;
     padding: 0px;
+    margin: 0px;
     font-size: 30px;
     text-align: center;
 }
 
-#start{
+.start{
 background-color: green;
 }
 
-#end{
+.end{
     background-color: green;
 }
 
-#monster{
+.monster{
     background-color: red;
 }
 
-#treasure{
+.treasure{
     background-color: goldenrod;
 }
