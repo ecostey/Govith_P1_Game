@@ -1,3 +1,8 @@
+body{
+    background-color: black;
+    color: white;
+}
+
 #board1wrapper{
     display: flex;
     justify-content: center;
@@ -7,28 +12,27 @@
 #board1{
     background: grey;
     display: inline-grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
     padding: 0px;
     margin: auto;
     position: relative;   
+    border: red solid 5px;
 }
 
 img{
-    height: 80px;
-    width: 80px;
+    height: 50px;
+    width: 50px;
 }
 
-.player{
+.player1{
     position: absolute;
-    width: 40px;
-    height: 40px;
     margin: auto;
 }
 
 .tile {
-    width: 80px;
-    height: 80px;
-    border: grey dotted .15px;
+    width: 50px;
+    height: 50px;
+    outline: grey dotted .15px;
     padding: 0px;
     margin: 0px;
     font-size: 30px;
@@ -36,21 +40,25 @@ img{
 }
 
 .O{
-    background-color: black;  
+    background-color: rgb(22, 21, 21);  
 }
 
 .start{
-    background-color: tan;
-    border-bottom: 150px green;
+    background-color: rgb(133, 133, 133);
+    border-top: 10px green;
 }
 
 .exit{
-    background-color: black;
-    border-top: 20px green;
+    background-color:  rgb(22, 21, 21); 
+   background: rgb(121, 80, 26);
 }
 
 .goblin{
     background-color: rgb(48, 4, 4);
+}
+
+.shade{
+    background-color: rgb(72, 5, 5);
 }
 
 .treasure{
