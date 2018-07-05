@@ -1,5 +1,11 @@
 //'govith' is Player1
-
+class Player1Govith {
+    constructor() {
+        this.totalHealth = 12;
+        this.currentHealth = 12;
+        this.attack = 2;
+    }
+}
 const govith = {
     x: 0,
     y: 0
@@ -8,7 +14,6 @@ const govith = {
 //press an arrow key to move Govith
 //code gratefully comandeered from Eric Lewis (http://wakeful-baritone.glitch.me/)
 document.addEventListener('keydown', evt => {
-    debugger;
     const keyCode = evt.keyCode;
     if ([37, 38, 39, 40].includes(keyCode)) {
         evt.preventDefault();
@@ -24,12 +29,9 @@ document.addEventListener('keydown', evt => {
             moveRight();
             break;
         case 40:
-            debugger;
             moveDown();
             break;
     }
-    console.log(govith);
-    console.log(keyCode);
 })
 
 //keep Govith within the game grid.
@@ -41,6 +43,7 @@ const isCoordinateInGrid = (x, y) => {
 }
 
 const canMoveTo = (x, y) => {
+    
     if (!isCoordinateInGrid(x, y)) {
         return false;
     }
