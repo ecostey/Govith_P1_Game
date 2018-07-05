@@ -120,10 +120,9 @@ class Treasures {
         }
     }
     UpdateScore() {
-        if (this.removeMob() === true) {
-            document.getElementsById('Score')  += 10;
-        }
-    }    
+        score += 10;
+        document.getElementsById('Score')
+    }
 }
 
 const exit1 = [

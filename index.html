@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="Govith" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Sigmar+One|Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Sigmar+One|Ubuntu|VT323" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Govith</h1>
-    <ul>
-        <li>A = Attack</li>
-        <li>S = Sneak</li>
-        <li>D = Drink Potion</li>
-        <li>Use Arrow Keys to Move.</li>
-    </ul>
-<div id="scorewrapper">
-    <div id = "board1wrapper">
-        <div id = "board1">
+    <div id="scorewrapper">
+    
+        <ul>
+            <h3>Key</h3>
+            <li>A = Attack</li>
+            <li>S = Sneak</li>
+            <li>D = Drink Potion</li>
+            <li>Arrow Keys = Move</li>
+        </ul>
+
+        <div id="board1wrapper">
+            <div id="board1">
                 <div class="player1">
                     <img src="img/pixel.knight.colorchange.gif" alt="G">
                 </div>
+            </div>
+        </div>
+
+        <div id="score">
+            <h3>Score Board</h3>
         </div>
     </div>
 
-    <div id = "score">
-        <h3>This is the score board:</h3>
-    </div>
-</div>
-
-<script src="boardlvl1.js"></script>
-<script src="player.js"></script>
-<script src="mob.js"></script>
-<script src="app.js"></script>
-<script src="view.js"></script>
-<script src="model.js"></script>
+    <script src="boardlvl1.js"></script>
+    <script src="player.js"></script>
+    <script src="mob.js"></script>
+    <script src="app.js"></script>
+    <script src="view.js"></script>
+    <script src="model.js"></script>
 </body>
+
 </html>

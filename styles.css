@@ -9,12 +9,22 @@ h1{
     text-align: center;
 }
 
+h3{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
+
+}
+
+
 p{
     font-family: 'Ubuntu', sans-serif;
 }
 
 ul{
-
+    font-family: 'Ubuntu', sans-serif;
+    background-color: gray;
+    height: 200px;
+    width: 160px;
 }
 
 #board1wrapper{
@@ -30,7 +40,7 @@ ul{
     padding: 0px;
     margin: auto;
     position: relative;   
-    border: red solid 5px;
+    border: yellowgreen solid 10px;
 }
 
 img{
@@ -64,27 +74,26 @@ img{
 
 .exit{
     background-color:  rgb(22, 21, 21); 
-   background: rgb(121, 80, 26);
+   background: rgb(22, 21, 21);
 }
 
 .goblin{
-    background-color: rgb(48, 4, 4);
+    background-color: rgb(22, 21, 21);
 }
 
 .shade{
-    background-color: rgb(72, 5, 5);
+    background-color: rgb(22, 21, 21);
 }
 
 .treasure{
-    background-color: goldenrod;
+    background-color:rgb(22, 21, 21);
 }
 
 #score{
-    background-color: grey;
-    height: 300px;
-    width: 300px;
+    background-color: gray;
+    height: 200px;
+    width: 200px;
     text-align: center;
-    
 }
 
 #scorewrapper{
