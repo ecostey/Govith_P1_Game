@@ -1,67 +1,60 @@
+class View {
+}
+const player1Govith = new Player1Govith();
+const goblinClan = new GoblinClan();
+
 //press an arrow key to move player
 //code gratefully comandeered from Eric Lewis (http://wakeful-baritone.glitch.me/)
 document.addEventListener('keydown', evt => {
     const keyCode = evt.keyCode;
-    if ([37, 38, 39, 40].includes(keyCode)) {
+    if ([37, 38, 39, 40, 65].includes(keyCode)) {
         evt.preventDefault();
     }
     switch (keyCode) {
         case 37:
-            moveLeft();
+            player1Govith.moveLeft();
             break;
         case 38:
-            moveUp();
+        player1Govith.moveUp();
             break;
         case 39:
-            moveRight();
+        player1Govith.moveRight();
             break;
         case 40:
-            moveDown();
+        player1Govith.moveDown();
+            break;
+        case 65:
+            attack(evt.x, evt.y);
             break;
     }
 })
 
-const moveCharacterTo = (x, y) => {
-    const govith = document.querySelector('.player1');
-    govith.style.top = (y * 50).toString() + 'px';
-    govith.style.left = (x * 50).toString() + 'px';
-}
-
-const moveRight = () => {
-    if (canMoveTo(govith.x + 1, govith.y)) {
-        govith.x += 1;
-        moveCharacterTo(govith.x, govith.y);
-    }
-}
-
-const moveLeft = () => {
-    if (canMoveTo(govith.x - 1, govith.y)) {
-        govith.x -= 1;
-        moveCharacterTo(govith.x, govith.y);
-    }
-}
-
-const moveDown = () => {
-    if (canMoveTo(govith.x, govith.y + 1)) {
-        govith.y += 1;
-        moveCharacterTo(govith.x, govith.y);
-    }
-}
-
-const moveUp = () => {
-    if (canMoveTo(govith.x, govith.y - 1)) {
-        govith.y -= 1;
-        moveCharacterTo(govith.x, govith.y);
-    }
-}
-
 // If player tries to enter a goblin tile, alert player they've been spotted and call 'battle' function.
-spottedAlert = () => {
-    debugger;
-    if (isThereAGoblinAt(x, y) === true){
+const spottedAlert = (x, y) => {
+    if (goblinClan.isThereAGoblinAt(x, y) === true){
         alert("You've been spotted by a Goblin!");
     }
 }
+
+const attack = (x, y) => {
+    debugger;
+    let oG = goblinClan.returnGoblinAt(x, y);
+    if (goblinClan.isThereAGoblinAt(x, y) === true && oG.currentHealth > 0){
+        oG.currentHealth -= Player1Govith.attack;
+        if (oG.currentHealth <= 0){
+            goblinClan.removeMob(x, y);
+            alert("The battle is won! Onward, friend.");
+        }
+   }//else if (isThereAShadeAt === true) {
+    //}
+}
+
+
+
+
+
+
+
 
 
 
