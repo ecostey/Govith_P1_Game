@@ -2,6 +2,7 @@ class View {
 }
 const player1Govith = new Player1Govith();
 const goblinClan = new GoblinClan();
+const treasures = new Treasures();
 
 //press an arrow key to move player
 //code gratefully comandeered from Eric Lewis (http://wakeful-baritone.glitch.me/)
@@ -24,29 +25,40 @@ document.addEventListener('keydown', evt => {
         player1Govith.moveDown();
             break;
         case 65:
-            attack(evt.x, evt.y);
+            attack();
             break;
     }
 })
 
 // If player tries to enter a goblin tile, alert player they've been spotted and call 'battle' function.
+let oG; 
 const spottedAlert = (x, y) => {
+    oG = goblinClan.returnGoblinAt(x, y);
     if (goblinClan.isThereAGoblinAt(x, y) === true){
         alert("You've been spotted by a Goblin!");
     }
+    
 }
 
 const attack = (x, y) => {
-    debugger;
-    let oG = goblinClan.returnGoblinAt(x, y);
-    if (goblinClan.isThereAGoblinAt(x, y) === true && oG.currentHealth > 0){
-        oG.currentHealth -= Player1Govith.attack;
+    console.log ("Attack!");
+    // if (goblinClan.isThereAGoblinAt(x, y) === true ){
+        oG.currentHealth -= player1Govith.attack;
         if (oG.currentHealth <= 0){
-            goblinClan.removeMob(x, y);
+            debugger;
+            goblinClan.removeMob();
             alert("The battle is won! Onward, friend.");
+
+            
         }
-   }//else if (isThereAShadeAt === true) {
+//    }else if (isThereAShadeAt === true) {
     //}
+}
+
+const treasureAlert = (x, y) => {
+    if (treasures.isThereTreasureAt(x, y) === true){
+        alert("You found hidden treasures!");
+    }
 }
 
 
@@ -66,7 +78,7 @@ const attack = (x, y) => {
 
 
 //Add coin gif to treasure tiles
-const treasure = document.querySelectorAll('.treasure');
+const treasurepic = document.querySelectorAll('.treasure');
 let treasureImage0 = document.createElement('img');
 let treasureImage1 = document.createElement('img');
 let treasureImage2 = document.createElement('img');
@@ -80,9 +92,9 @@ treasureImage2.src = "img/coin.gif";
 treasureImage2.style.height = "50px";
 treasureImage2.style.width = "50px";
 
-let treasure0 = treasure[0];
-let treasure1 = treasure[1];
-let treasure2 = treasure[2];
+let treasure0 = treasurepic[0];
+let treasure1 = treasurepic[1];
+let treasure2 = treasurepic[2];
 treasure0.appendChild(treasureImage0);
 treasure1.appendChild(treasureImage1);
 treasure2.appendChild(treasureImage2);

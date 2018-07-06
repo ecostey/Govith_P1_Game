@@ -24,14 +24,15 @@ class Player1Govith {
 
     canMoveTo(x, y) {
         spottedAlert(x, y);
-        attack(x, y);
         if (!this.isCoordinateInGrid(x, y)) {
             return false;
         } else if (goblinClan.isThereAGoblinAt(x, y)) {
             return false;
         //} else if (isThereAShadeAt(x, y)) {
         //    return false;
-        } else {
+
+
+        }else {
             return true;
         }
     }
