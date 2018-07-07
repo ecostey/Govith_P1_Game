@@ -70,17 +70,15 @@ const gBattlesShade = (x, y) => {
         shadeAttack.currentHealth -= player1Govith.attack;
         if (shadeAttack.currentHealth <= 0) {
             shades.removeShadeInst(x, y);
-            document.getElementsByClassName("playerUpdates")[0].innerHTML = "Shade Defeated! Our Glory Grows.";
+            document.getElementsByClassName("playerUpdates")[0].innerHTML = "Shade Defeated! Our Glory Grows!";
         }
     }
 }
 
-
-
-
+//Govith collects Treasures.
 const treasureAlert = (x, y) => {
     if (treasures.isThereTreasureAt(x, y) === true) {
-        document.getElementsByClassName("playerUpdates")[0].innerHTML = "Found hidden treasures!";
+        document.getElementsByClassName("playerUpdates")[0].innerHTML = "Found Hidden Treasures!";
         treasures.removeTreasureInst(x, y);
     }
 }

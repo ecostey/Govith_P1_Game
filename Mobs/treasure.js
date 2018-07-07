@@ -7,16 +7,17 @@ class Treasures {
         ];
     }
     isThereTreasureAt(x, y) {
-        debugger;
         for (let i = 0; i < this.treasureArr.length; i+=1) {
             const treasureLoc = this.treasureArr[i];
             if (treasureLoc.x === x && treasureLoc.y === y) {
                 return true;
+                console.log("There's treasure here!");
             }
         }
         return false;
     }
     removeTreasureInst(x, y) {
+        debugger
         for (let i = 0; i < this.treasureArr.length; i += 1) {
             const currentTreasure = this.treasureArr[i];
             if (currentTreasure.x === x && currentTreasure.y === y) {
