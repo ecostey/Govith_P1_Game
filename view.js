@@ -1,5 +1,4 @@
-class View {
-}
+class View {}
 const player1Govith = new Player1Govith();
 const goblinClan = new GoblinClan();
 const treasures = new Treasures();
@@ -8,7 +7,7 @@ const treasures = new Treasures();
 //code gratefully comandeered from Eric Lewis (http://wakeful-baritone.glitch.me/)
 document.addEventListener('keydown', evt => {
     const keyCode = evt.keyCode;
-    if ([37, 38, 39, 40, 65].includes(keyCode)) {
+    if ([37, 38, 39, 40].includes(keyCode)) {
         evt.preventDefault();
     }
     switch (keyCode) {
@@ -16,48 +15,51 @@ document.addEventListener('keydown', evt => {
             player1Govith.moveLeft();
             break;
         case 38:
-        player1Govith.moveUp();
+            player1Govith.moveUp();
             break;
         case 39:
-        player1Govith.moveRight();
+            player1Govith.moveRight();
             break;
         case 40:
-        player1Govith.moveDown();
-            break;
-        case 65:
-            attack();
+            player1Govith.moveDown();
             break;
     }
 })
 
 // If player tries to enter a goblin tile, alert player they've been spotted and call 'battle' function.
-let oG; 
+
 const spottedAlert = (x, y) => {
-    oG = goblinClan.returnGoblinAt(x, y);
-    if (goblinClan.isThereAGoblinAt(x, y) === true){
-        alert("You've been spotted by a Goblin!");
-    }
-    
-}
-
-const attack = (x, y) => {
-    console.log ("Attack!");
-    // if (goblinClan.isThereAGoblinAt(x, y) === true ){
-        oG.currentHealth -= player1Govith.attack;
-        if (oG.currentHealth <= 0){
+    if (goblinClan.isThereAGoblinAt(x, y) === true) {
+        let gobAttack = goblinClan.returnGoblin(x, y);
+        if (gobAttack.hidden === true){
             debugger;
-            goblinClan.removeMob();
-            alert("The battle is won! Onward, friend.");
+            document.getElementById("goblin" + x + y).childNodes[0].style.visibility = "visible";
+            document.getElementsByClassName("playerUpdates")[0].innerHTML="Look out! Goblin Attack!";
 
-            
         }
-//    }else if (isThereAShadeAt === true) {
-    //}
+    }
+
+}
+//To have Govith attack Goblins.
+const attack = (x, y) => {
+    if (goblinClan.isThereAGoblinAt(x, y) === true) {
+        console.log("Govith Attacks Goblin!");
+        let gobAttack = goblinClan.returnGoblin(x, y);
+        gobAttack.currentHealth -= player1Govith.attack;
+        if (gobAttack.currentHealth <= 0) {
+            goblinClan.removeGoblinInst();
+            alert("The battle is won! Onward, friend.");
+            //oG.classList.remove("goblin");
+        }
+        //    }else if (isThereAShadeAt === true) {
+        //}
+    }
 }
 
 const treasureAlert = (x, y) => {
-    if (treasures.isThereTreasureAt(x, y) === true){
+    if (treasures.isThereTreasureAt(x, y) === true) {
         alert("You found hidden treasures!");
+        treasures.isThereTreasureAt(x, y).classList.remove("treasure");
     }
 }
 

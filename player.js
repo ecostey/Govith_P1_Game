@@ -23,7 +23,9 @@ class Player1Govith {
     }
 
     canMoveTo(x, y) {
+        console.log(x,y);
         spottedAlert(x, y);
+        attack(x, y);
         if (!this.isCoordinateInGrid(x, y)) {
             return false;
         } else if (goblinClan.isThereAGoblinAt(x, y)) {
