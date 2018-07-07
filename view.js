@@ -1,6 +1,7 @@
 class View {}
 const player1Govith = new Player1Govith();
 const goblinClan = new GoblinClan();
+const shades = new Shades();
 const treasures = new Treasures();
 
 //press an arrow key to move player
@@ -26,39 +27,61 @@ document.addEventListener('keydown', evt => {
     }
 })
 
-// If player tries to enter a goblin tile, alert player they've been spotted and call 'battle' function.
-
-const spottedAlert = (x, y) => {
+// If player tries to enter a goblin tile, alert player they've been spotted & turn goblin image visible.
+const spottedAlertGob = (x, y) => {
     if (goblinClan.isThereAGoblinAt(x, y) === true) {
         let gobAttack = goblinClan.returnGoblin(x, y);
-        if (gobAttack.hidden === true){
+        if (gobAttack.hidden === true) {
             document.getElementById("goblin" + x + y).childNodes[0].style.visibility = "visible";
-            document.getElementsByClassName("playerUpdates")[0].innerHTML="Look out! Goblin Attack!";
-
+            document.getElementsByClassName("playerUpdates")[0].innerHTML = "Look out! Goblin Attack!";
         }
     }
-
 }
-//To have Govith attack Goblins.
-const attack = (x, y) => {
+
+//Govith fights Goblins.
+const gBattlesGob = (x, y) => {
     if (goblinClan.isThereAGoblinAt(x, y) === true) {
-        console.log("Govith Attacks Goblin!");
+        document.getElementsByClassName("playerUpdates")[0].innerHTML = "Govith Attacks Goblin!";
         let gobAttack = goblinClan.returnGoblin(x, y);
         gobAttack.currentHealth -= player1Govith.attack;
         if (gobAttack.currentHealth <= 0) {
             goblinClan.removeGoblinInst(x, y);
-            alert("The battle is won! Onward, friend.");
-            //oG.classList.remove("goblin");
+            document.getElementsByClassName("playerUpdates")[0].innerHTML = "Goblin Defeated! Onward, Friend.";
         }
-        //    }else if (isThereAShadeAt === true) {
-        //}
     }
 }
 
+// If player tries to enter a shade tile, alert player they've been spotted & turn shade image visible.
+const spottedAlertShade = (x, y) => {
+    if (shades.isThereAShadeAt(x, y) === true) {
+        let shadeAttack = shades.returnShade(x, y);
+        if (shadeAttack.hidden === true) {
+            document.getElementsByClassName("playerUpdates")[0].innerHTML = "A Poisonous Shade Attacks!";
+            document.getElementById("shade" + x + y).childNodes[0].style.visibility = "visible";
+        }
+    }
+}
+
+//Govith fights shades.
+const gBattlesShade = (x, y) => {
+    if (shades.isThereAShadeAt(x, y) === true) {
+        document.getElementsByClassName("playerUpdates")[0].innerHTML = "Govith Battles the Shade!";
+        let shadeAttack = shades.returnShade(x, y);
+        shadeAttack.currentHealth -= player1Govith.attack;
+        if (shadeAttack.currentHealth <= 0) {
+            shades.removeShadeInst(x, y);
+            document.getElementsByClassName("playerUpdates")[0].innerHTML = "Shade Defeated! Our Glory Grows.";
+        }
+    }
+}
+
+
+
+
 const treasureAlert = (x, y) => {
     if (treasures.isThereTreasureAt(x, y) === true) {
-        alert("You found hidden treasures!");
-        treasures.isThereTreasureAt(x, y).classList.remove("treasure");
+        document.getElementsByClassName("playerUpdates")[0].innerHTML = "Found hidden treasures!";
+        treasures.removeTreasureInst(x, y);
     }
 }
 

@@ -1,11 +1,16 @@
 class Player1Govith {
     constructor() {
+        this.score = 0;
         this.totalHealth = 12;
         this.currentHealth = 12;
         this.attack = 2;
         this.govith = {
             x: 0, y: 0
         };
+    }
+
+    score() {
+        document.getElementById("score").innerHTML = 0;
     }
 
     moveCharacterTo(x, y) {
@@ -24,17 +29,17 @@ class Player1Govith {
 
     canMoveTo(x, y) {
         console.log(x,y);
-        spottedAlert(x, y);
-        attack(x, y);
+        spottedAlertGob(x, y);
+        spottedAlertShade(x, y);
+        gBattlesGob(x, y);
+        gBattlesShade(x, y);
         if (!this.isCoordinateInGrid(x, y)) {
             return false;
         } else if (goblinClan.isThereAGoblinAt(x, y)) {
             return false;
-        //} else if (isThereAShadeAt(x, y)) {
-        //    return false;
-
-
-        }else {
+        } else if (shades.isThereAShadeAt(x, y)) {
+           return false;
+        } else {
             return true;
         }
     }

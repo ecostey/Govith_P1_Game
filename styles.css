@@ -1,65 +1,73 @@
-
-body{
+body {
     background-color: black;
     color: white;
 }
 
-h1{
+h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 60px;
     text-align: center;
 }
 
-h3{
+h3 {
     font-family: 'Press Start 2P', cursive;
     font-size: 25px;
+    text-align: center;
 }
 
-p{
+p {
     font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-size: 20px;
 }
 
-ul{
-    font-family: 'Ubuntu', sans-serif;
-    background-color: gray;
-    height: 200px;
-    width: 160px;
-}
-
-.playerUpdates{
+.playerUpdates {
     display: block;
     margin: auto;
     position: relative;
     text-align: center;
-    height: 80px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
+    line-height: 200%;
+    color: black;
+    height: 72px;
     width: 500px;
-    background-color:greenyellow;
-    padding: 10px; 
-    color: black;  
+    background-color: greenyellow;
+    padding: 10px;
 }
 
-#board1wrapper{
+.keyWrapper {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: gray;
+    height: 200px;
+    width: 200px;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#board1wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#board1{
-    background: grey;
+#board1 {
+    background: rgb(22, 21, 21);
     display: inline-grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
     padding: 0px;
     margin: auto;
-    position: relative;   
+    position: relative;
     border: greenyellow solid 10px;
 }
 
-img{
+img {
     height: 50px;
     width: 50px;
 }
 
-.player1{
+.player1 {
     position: absolute;
     margin: auto;
 }
@@ -75,42 +83,33 @@ img{
     text-align: center;
 }
 
-.O{
+.O {}
 
-}
+.start {}
 
-.start{
+.exit {}
 
-}
-
-.exit{
-
-}
-
-.goblin > img{
+.goblin>img {
     visibility: hidden;
 }
 
-.shade{
-
+.shade {
+visibility: hidden;
 }
 
-.treasure{
-
+.treasure {
+    visibility: visible;
 }
 
-#score{
+#score {
     background-color: gray;
     height: 200px;
     width: 200px;
     text-align: center;
 }
 
-#scorewrapper{
+#scorewrapper {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
-
-
-
