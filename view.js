@@ -32,7 +32,6 @@ const spottedAlert = (x, y) => {
     if (goblinClan.isThereAGoblinAt(x, y) === true) {
         let gobAttack = goblinClan.returnGoblin(x, y);
         if (gobAttack.hidden === true){
-            debugger;
             document.getElementById("goblin" + x + y).childNodes[0].style.visibility = "visible";
             document.getElementsByClassName("playerUpdates")[0].innerHTML="Look out! Goblin Attack!";
 
@@ -47,7 +46,7 @@ const attack = (x, y) => {
         let gobAttack = goblinClan.returnGoblin(x, y);
         gobAttack.currentHealth -= player1Govith.attack;
         if (gobAttack.currentHealth <= 0) {
-            goblinClan.removeGoblinInst();
+            goblinClan.removeGoblinInst(x, y);
             alert("The battle is won! Onward, friend.");
             //oG.classList.remove("goblin");
         }

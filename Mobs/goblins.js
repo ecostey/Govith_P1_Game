@@ -68,8 +68,11 @@ class GoblinClan {
     removeGoblinInst(x, y) {
         for (let i = 0; i < this.goblinsArr.length; i += 1) {
             const currentGoblin = this.goblinsArr[i];
+            debugger;
             if (currentGoblin.x === x && currentGoblin.y === y) {
                 this.goblinsArr.splice(i, 1);
+               debugger;
+                document.getElementById("goblin" + x + y).childNodes[0].style.visibility = "hidden";
             }
         }
     }
