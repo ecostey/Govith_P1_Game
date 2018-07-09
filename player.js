@@ -23,7 +23,6 @@ class Player1Govith {
     }
 
     canMoveTo(x, y) {
-        console.log(x,y);
         spottedAlertGob(x, y);
         spottedAlertShade(x, y);
         gBattlesGob(x, y);

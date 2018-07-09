@@ -99,9 +99,10 @@ const treasureAlert = (x, y) => {
 
 
 // playWins = () => {
-//     If (player1Govith.x === 9 && player1Govith.y === 9){
-//         console.log("Level 1 Complete!")
+//     If (player1Govith.canMoveTo(9,9)){
+//         console.log("Level 1 Complete!");
 //     }
+// }
 
 
 
