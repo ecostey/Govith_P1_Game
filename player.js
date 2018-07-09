@@ -38,6 +38,7 @@ class Player1Govith {
             exitLvl1.playerWins(x, y); 
         } else {
             return true;
+            playerWins()
         }
     }
     

@@ -14,8 +14,9 @@ class Exit {
     }
 
     playerWins(x, y) {
-        if (this.isTheExtiAt === true) {
+        if (this.isTheExitAt(x, y) === true) {
             console.log("Level 1 Complete!");
+            document.getElementsByClassName("playerUpdates")[0].innerHTML = "Cleared Dungeon Level 1!";
         }
     }
 
