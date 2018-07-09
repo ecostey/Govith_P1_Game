@@ -6,18 +6,27 @@ class Treasures {
             {x: 9, y: 6, bonusPoints: 10}
         ];
     }
+    
     isThereTreasureAt(x, y) {
-        for (let i = 0; i < this.treasureArr.length; i+=1) {
+        for (let i = 0; i < this.treasureArr.length; i +=1 ){
             const treasureLoc = this.treasureArr[i];
             if (treasureLoc.x === x && treasureLoc.y === y) {
-                return true;
                 console.log("There's treasure here!");
+                return true;
             }
         }
         return false;
     }
+
+    updateScore() {
+        let scoreHolder = document.getElementById('score');
+        let playerScore = +scoreHolder.innerText;
+        if (treasures.isThereTreasureAt() === true) {
+            playerScore += 20;
+        }
+    }
+
     removeTreasureInst(x, y) {
-        debugger
         for (let i = 0; i < this.treasureArr.length; i += 1) {
             const currentTreasure = this.treasureArr[i];
             if (currentTreasure.x === x && currentTreasure.y === y) {

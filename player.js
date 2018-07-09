@@ -3,7 +3,7 @@ class Player1Govith {
         this.totalHealth = 12;
         this.currentHealth = 12;
         this.attack = 2;
-        this.govith = {
+        this.govithLocation = {
             x: 0, y: 0
         };
     }
@@ -34,36 +34,38 @@ class Player1Govith {
             return false;
         } else if (shades.isThereAShadeAt(x, y)) {
            return false;
+        } else if (!!exitLvl1.isTheExitAt(x, y)) {
+            exitLvl1.playerWins(x, y); 
         } else {
             return true;
         }
     }
     
     moveRight(){
-        if (this.canMoveTo(this.govith.x + 1, this.govith.y)) {
-            this.govith.x += 1;
-            this.moveCharacterTo(this.govith.x, this.govith.y);
+        if (this.canMoveTo(this.govithLocation.x + 1, this.govithLocation.y)) {
+            this.govithLocation.x += 1;
+            this.moveCharacterTo(this.govithLocation.x, this.govithLocation.y);
         }
     }
     
     moveLeft() {
-        if (this.canMoveTo(this.govith.x - 1, this.govith.y)) {
-            this.govith.x -= 1;
-            this.moveCharacterTo(this.govith.x, this.govith.y);
+        if (this.canMoveTo(this.govithLocationgovithLocation.x - 1, this.govithLocation.y)) {
+            this.govithLocation.x -= 1;
+            this.moveCharacterTo(this.govithLocation.x, this.govithLocation.y);
         }
     }
     
     moveDown(){
-        if (this.canMoveTo(this.govith.x, this.govith.y + 1)) {
-            this.govith.y += 1;
-            this.moveCharacterTo(this.govith.x, this.govith.y);
+        if (this.canMoveTo(this.govithLocation.x, this.govithLocation.y + 1)) {
+            this.govithLocation.y += 1;
+            this.moveCharacterTo(this.govithLocation.x, this.govithLocation.y);
         }
     }
     
     moveUp(){
-        if (this.canMoveTo(this.govith.x, this.govith.y - 1)) {
-            this.govith.y -= 1;
-            this.moveCharacterTo(this.govith.x, this.govith.y);
+        if (this.canMoveTo(this.govithLocation.x, this.govithLocation.y - 1)) {
+            this.govithLocation.y -= 1;
+            this.moveCharacterTo(this.govithLocation.x, this.govithLocation.y);
         }
     }
 

@@ -55,6 +55,14 @@ class GoblinClan {
         return undefined;
     }
 
+    updateScore() {
+        let scoreHolder = document.getElementById('score');
+        let playerScore = +scoreHolder.innerText;
+        if (this.isThereAGoblinAt() === true) {
+            playerScore += 10;
+        }
+    }
+
     removeGoblinInst(x, y) {
         for (let i = 0; i < this.goblinsArr.length; i += 1) {
             const currentGoblin = this.goblinsArr[i];

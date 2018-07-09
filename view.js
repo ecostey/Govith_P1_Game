@@ -1,8 +1,9 @@
 class View {}
-const player1Govith = new Player1Govith();
 const goblinClan = new GoblinClan();
 const shades = new Shades();
 const treasures = new Treasures();
+const exitLvl1 = new Exit();
+const player1Govith = new Player1Govith();
 
 //press an arrow key to move player
 //code gratefully comandeered from Eric Lewis (http://wakeful-baritone.glitch.me/)
@@ -30,8 +31,8 @@ document.addEventListener('keydown', evt => {
 // If player tries to enter a goblin tile, alert player they've been spotted & turn goblin image visible.
 const spottedAlertGob = (x, y) => {
     if (goblinClan.isThereAGoblinAt(x, y) === true) {
-        let gobAttack = goblinClan.returnGoblin(x, y);
-        if (gobAttack.hidden === true) {
+        let currentGoblin = goblinClan.returnGoblin(x, y);
+        if (currentGoblin.hidden === true) {
             document.getElementById("goblin" + x + y).childNodes[0].style.visibility = "visible";
             document.getElementsByClassName("playerUpdates")[0].innerHTML = "Look out! Goblin Attack!";
         }
@@ -42,10 +43,11 @@ const spottedAlertGob = (x, y) => {
 const gBattlesGob = (x, y) => {
     if (goblinClan.isThereAGoblinAt(x, y) === true) {
         document.getElementsByClassName("playerUpdates")[0].innerHTML = "Govith Attacks Goblin!";
-        let gobAttack = goblinClan.returnGoblin(x, y);
-        gobAttack.currentHealth -= player1Govith.attack;
-        if (gobAttack.currentHealth <= 0) {
+        let currentGoblin = goblinClan.returnGoblin(x, y);
+        currentGoblin.currentHealth -= player1Govith.attack;
+        if (currentGoblin.currentHealth <= 0) {
             goblinClan.removeGoblinInst(x, y);
+            goblinClan.updateScore();
             document.getElementsByClassName("playerUpdates")[0].innerHTML = "Goblin Defeated! Onward, Friend.";
         }
     }
@@ -54,8 +56,8 @@ const gBattlesGob = (x, y) => {
 // If player tries to enter a shade tile, alert player they've been spotted & turn shade image visible.
 const spottedAlertShade = (x, y) => {
     if (shades.isThereAShadeAt(x, y) === true) {
-        let shadeAttack = shades.returnShade(x, y);
-        if (shadeAttack.hidden === true) {
+        let currentShade = shades.returnShade(x, y);
+        if (currentShade.hidden === true) {
             document.getElementsByClassName("playerUpdates")[0].innerHTML = "A Poisonous Shade Attacks!";
             document.getElementById("shade" + x + y).childNodes[0].style.visibility = "visible";
         }
@@ -66,20 +68,24 @@ const spottedAlertShade = (x, y) => {
 const gBattlesShade = (x, y) => {
     if (shades.isThereAShadeAt(x, y) === true) {
         document.getElementsByClassName("playerUpdates")[0].innerHTML = "Govith Battles the Shade!";
-        let shadeAttack = shades.returnShade(x, y);
-        shadeAttack.currentHealth -= player1Govith.attack;
-        if (shadeAttack.currentHealth <= 0) {
+        let currentShade = shades.returnShade(x, y);
+        currentShade.currentHealth -= player1Govith.attack;
+        if (currentShade.currentHealth <= 0) {
             shades.removeShadeInst(x, y);
             document.getElementsByClassName("playerUpdates")[0].innerHTML = "Shade Defeated! Our Glory Grows!";
         }
     }
 }
 
-//Govith collects Treasures.
+//When Govith collects Treasures: 
+//1) console.log "found hidden treasure"
+//2) add 20pts to player's score
+//3) and remove treasure from dom & array. 
 const treasureAlert = (x, y) => {
     if (treasures.isThereTreasureAt(x, y) === true) {
         document.getElementsByClassName("playerUpdates")[0].innerHTML = "Found Hidden Treasures!";
         treasures.removeTreasureInst(x, y);
+        treasures.updateScore();
     }
 }
 
@@ -87,7 +93,7 @@ const treasureAlert = (x, y) => {
 //Updating the score
 //If goblins or shades are defeated, award 10 points.
 //If treasure is collected, award 20 points.
-// UpdateScore = () => {
+// updateScore = () => {
 //     let scoreHolder = document.getElementById('score');
 //     let playerScore = +scoreHolder.innerText;
 //     if (treasures.isThereTreasureAt(x, y) === true) {
@@ -98,11 +104,7 @@ const treasureAlert = (x, y) => {
 // }
 
 
-// playWins = () => {
-//     If (player1Govith.canMoveTo(9,9)){
-//         console.log("Level 1 Complete!");
-//     }
-// }
+
 
 
 
