@@ -57,10 +57,11 @@ class GoblinClan {
 
     updateScore() {
         let scoreHolder = document.getElementById('score');
-        let playerScore = +scoreHolder.innerText;
-        if (this.isThereAGoblinAt() === true) {
-            playerScore += 10;
-        }
+        let playerScore = parseInt(scoreHolder.innerText);
+        console.log(playerScore)
+        playerScore += 10;
+        console.log(playerScore)
+        scoreHolder.innerText =  playerScore;
     }
 
     removeGoblinInst(x, y) {

@@ -72,6 +72,7 @@ const gBattlesShade = (x, y) => {
         currentShade.currentHealth -= player1Govith.attack;
         if (currentShade.currentHealth <= 0) {
             shades.removeShadeInst(x, y);
+            shades.updateScore();
             document.getElementsByClassName("playerUpdates")[0].innerHTML = "Shade Defeated! Our Glory Grows!";
         }
     }
@@ -88,20 +89,6 @@ const treasureAlert = (x, y) => {
         treasures.updateScore();
     }
 }
-
-
-//Updating the score
-//If goblins or shades are defeated, award 10 points.
-//If treasure is collected, award 20 points.
-// updateScore = () => {
-//     let scoreHolder = document.getElementById('score');
-//     let playerScore = +scoreHolder.innerText;
-//     if (treasures.isThereTreasureAt(x, y) === true) {
-//         playerScore += 20;
-//     }else if () {
-//         playerScore += 10;
-//     }
-// }
 
 
 
@@ -196,3 +183,15 @@ exitImage0.style.height = "50px";
 exitImage0.style.width = "50px";
 let exit0 = exit[0];
 exit0.appendChild(exitImage0);
+
+// let mobjects [{
+//     name: 'shade',
+//     height: '50px',
+//     width: '50px'
+//     },
+//     {
+//     name: 'goblin',
+//     height: '50px',
+//     width: '50px',
+//     }
+//     `img/${mobjects[0].name}.png`

@@ -48,6 +48,15 @@ class Shades {
         return undefined;
     }
 
+    updateScore() {
+        let scoreHolder = document.getElementById('score');
+        let playerScore = parseInt(scoreHolder.innerText);
+        console.log(playerScore)
+        playerScore += 10;
+        console.log(playerScore)
+        scoreHolder.innerText =  playerScore;
+    }
+
     removeShadeInst(x, y) {
         for (let i = 0; i < this.shadesArr.length; i += 1) {
             const currentShade = this.shadesArr[i];

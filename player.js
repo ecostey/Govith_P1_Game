@@ -49,7 +49,7 @@ class Player1Govith {
     }
     
     moveLeft() {
-        if (this.canMoveTo(this.govithLocationgovithLocation.x - 1, this.govithLocation.y)) {
+        if (this.canMoveTo(this.govithLocation.x - 1, this.govithLocation.y)) {
             this.govithLocation.x -= 1;
             this.moveCharacterTo(this.govithLocation.x, this.govithLocation.y);
         }
