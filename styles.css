@@ -39,6 +39,7 @@ p {
 #PlayGamewrapper {
     justify-content: space-evenly;
     align-items: center;  
+    display: flex;
 }
 
 .keyWrapper {
@@ -66,17 +67,21 @@ p {
     border: greenyellow solid 10px;
 }
 
-#score {
+.scoreWrapper {
     background-color: gray;
     height: 200px;
     width: 200px;
     text-align: center;
-}
-
-#scorewrapper {
-    display: flex;
+  
     justify-content: space-evenly;
     align-items: center;
+}
+
+
+#score {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
 }
 
 img {
