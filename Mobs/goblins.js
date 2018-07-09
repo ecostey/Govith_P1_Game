@@ -65,10 +65,4 @@ class GoblinClan {
         }
     }
 
-    //If goblin is defeated, Update the score (add 15 points).
-    UpdateScore() {
-        if (this.removeGoblinInst() === true) {
-            document.getElementsById('Score') += 15;
-        }
-    }
 }

@@ -58,14 +58,4 @@ class Shades {
         }
     }
 
-    //If shade is defeated, Update the score (add 15 points).
-    UpdateScore() {
-        for (let i = 0; i < this.shadesArr.length; i += 1) {
-            const shade = this.shadesArr[i];
-            if (shade.x === x && shade.y === y) {
-                document.getElementsById('Score') += 15;
-            }
-        }
-    }
-
 }

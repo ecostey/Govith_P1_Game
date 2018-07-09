@@ -84,10 +84,24 @@ const treasureAlert = (x, y) => {
 }
 
 
+//Updating the score
+//If goblins or shades are defeated, award 10 points.
+//If treasure is collected, award 20 points.
+// UpdateScore = () => {
+//     let scoreHolder = document.getElementById('score');
+//     let playerScore = +scoreHolder.innerText;
+//     if (treasures.isThereTreasureAt(x, y) === true) {
+//         playerScore += 20;
+//     }else if () {
+//         playerScore += 10;
+//     }
+// }
 
 
-
-
+// playWins = () => {
+//     If (player1Govith.x === 9 && player1Govith.y === 9){
+//         console.log("Level 1 Complete!")
+//     }
 
 
 

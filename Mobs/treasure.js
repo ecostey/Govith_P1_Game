@@ -26,8 +26,4 @@ class Treasures {
             }
         }
     }
-    UpdateScore() {
-        score += 10;
-        document.getElementsById('Score')
-    }
 }

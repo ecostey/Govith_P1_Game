@@ -101,14 +101,17 @@ visibility: hidden;
     visibility: visible;
 }
 
-#score {
+.scoreBox {
     background-color: gray;
     height: 200px;
     width: 200px;
     text-align: center;
 }
 
-#scorewrapper {
+#score {
+}
+
+#playGameWrapper {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
