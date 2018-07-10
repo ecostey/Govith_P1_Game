@@ -1,144 +1,69 @@
-body {
-    background-color: black;
-    color: white;
-}
-
-.hero {
-
+.landing-page-body{
+    background-image: url ("./img/dungeon.png");
+    background-color: rgb(22, 21, 21);;
 }
 
 h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 60px;
     text-align: center;
+    color: white;
 }
 
-h3 {
+h2 {
     font-family: 'Press Start 2P', cursive;
     font-size: 25px;
     text-align: center;
+    color: white;
 }
 
-p {
+a {
+    text-decoration: none;
+    text-align: center;
     font-family: 'Ubuntu', sans-serif;
-    text-align: center;
-    font-size: 20px;
 }
 
-.playerUpdates {
-    display: block;
-    margin: auto;
-    position: relative;
+.intro-tale{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25px;
     text-align: center;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 24px;
-    line-height: 200%;
-    color: black;
-    height: 72px;
-    width: 500px;
-    background-color: greenyellow;
-    padding: 10px;
+    color: white;
 }
 
-.nxt-lvl-message{
+button{
     display: block;
-    margin: auto;
+    margin: 20px auto;
     position: relative;
     text-align: center;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
-    line-height: 200%;
-    color: black;
+    color: white;
     height: 40px;
-    width: 500px;
-    background-color: greenyellow;
-    padding: 10px;
-}  
-
-#PlayGamewrapper {
-    justify-content: space-evenly;
-    align-items: center;  
-    display: flex;
+    width: 170px;
+    background-color: white;
+    border-radius: 5%;
+    box-shadow: 5px 5px 2.5px rgb(75, 74, 74);
 }
 
-.keyWrapper {
-    font-family: 'Ubuntu', sans-serif;
-    background-color: gray;
-    height: 200px;
-    width: 200px;
-    justify-content: space-evenly;
-    align-items: center;
-
-}
-
-#board1wrapper {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-#board1 {
-    background: rgb(22, 21, 21);
-    display: inline-grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
-    padding: 0px;
+.start-game-button{
+    display: block;
+    margin: 20px auto;
     position: relative;
-    border: greenyellow solid 10px;
-}
-
-.scoreWrapper {
-    background-color: gray;
-    height: 200px;
-    width: 200px;
     text-align: center;
-  
-    justify-content: space-evenly;
-    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    color: white;
+    height: 40px;
+    width: 170px;
+    background-color: white;
+    border-radius: 5%;
+    box-shadow: 5px 5px 2.5px rgb(75, 74, 74);
 }
 
-
-#score {
-    text-align: center;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 40px;
+img{
+    height: 400px;
+    width: 950px;
+    display: block;
+    margin: 20px auto;
+    position: relative;
 }
-
-img {
-    height: 50px;
-    width: 50px;
-}
-
-.player1 {
-    position: absolute;
-    margin: auto;
-}
-
-.tile {
-    width: 50px;
-    height: 50px;
-    outline: grey dotted .15px;
-    background-color: rgb(22, 21, 21);
-    padding: 0px;
-    margin: 0px;
-    font-size: 30px;
-    text-align: center;
-}
-
-.goblin>img {
-    visibility: hidden;
-}
-
-.shade {
-    visibility: hidden;
-}
-
-.treasure {
-    visibility: visible;
-}
-
-.O {}
-
-.start {}
-
-.exit {}
-
