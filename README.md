@@ -1,4 +1,4 @@
-# dungeon.crawl
+# Govith dungeon.crawl
 
 **What is GOVITH?**
 
@@ -9,6 +9,10 @@ Govith is a classic Dungeon Crawl game created in the likeness of Rogue and NetH
 Govith begins each level in the top, left corner and must make it to the bottom, right corner in order to reach the next level of the dungeon.
 Along the way, players can score extra points by fighting monsters and collecting treasure. While monsters are currently harmless in level 1, in later levels I intend to make the game more interactive & challanging.
 To move Govith, use the arrow keys. To fight, simply use the arrow key that points in the direction of the monster you are fighting.
+
+**Installation**
+- Fork, clone, & have fun!
+
 
 **Some Background on the Making of Govith**
 
