@@ -11,7 +11,8 @@ class Exit {
         }
         return false;
     }
-
+    
+//If player makes it to tile (9,9), then they've completed level 1
     playerWins(x, y) {
         if (this.isTheExitAt(x, y) === true) {
             console.log("Level 1 Complete!");
