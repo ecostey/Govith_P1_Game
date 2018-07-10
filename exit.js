@@ -19,7 +19,7 @@ class Exit {
             document.getElementsByClassName("playerUpdates")[0].innerHTML = "Cleared Dungeon Level 1!";
             const nextLevelElement = document.createElement('LINK');
             nextLevelElement.className = 'nxt-lvl-message';
-            nextLevelElement.innerHTML = 'Procede to Level 2';
+            nextLevelElement.innerHTML = 'Proceed to Level 2';
             nextLevelElement.setAttribute("href", "#" );
             document.querySelector('.hero').appendChild(nextLevelElement);
         }
