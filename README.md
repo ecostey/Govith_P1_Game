@@ -27,4 +27,5 @@ The board was created using a 2d Array and nested for-loop. This allowed me to n
 This part was tricky from a strategic standpoint. Should I take the safe route and keep all my js in one long, but organized file? Or should I venture into View/Model theory? In the end, I compromised- multiple pages with classes per piece.
 This compromise was both a blessing and a curse. It simplified my code and made it easier to navigate. However, it also made calling the functions/methods on different pages a tad tricky.
 
+**Post MVP**
 Keep on the lookout for Level 2- but, until then... "Fight on to glory, friends!"
