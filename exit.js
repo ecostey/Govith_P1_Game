@@ -14,7 +14,9 @@ class Exit {
     
 //If player makes it to tile (9,9), then they've completed level 1
     playerWins(x, y) {
-        if (this.isTheExitAt(x, y) === true) {
+        if (document.getElementsByClassName("playerUpdates")[0].innerHTML === "Cleared Dungeon Level 1!"){
+            return;
+        }else if (this.isTheExitAt(x, y) === true) {
             console.log("Level 1 Complete!");
             document.getElementsByClassName("playerUpdates")[0].innerHTML = "Cleared Dungeon Level 1!";
             const nextLevelElement = document.createElement('LINK');
